@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Vanguardia - {{rss.feed.title}}</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
-    <h1>La Vanguardia - <small>{{rss.feed.title}}</small></h1>
-    {% for item in rss.entries %}
-        <p>
-            <a href="{{item.link}}">{{item.title}}</a>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Inici</a></li>
+                <li><a href="/lavanguardia/deportes">Deportes</a></li>
+                <li><a href="/lavanguardia/politica">Política</a></li>
+                <li><a href="/lavanguardia/vida">Vida</a></li>
+                <li><a href="/lavanguardia/cultura">Cultura</a></li>
+                <li><a href="/lavanguardia/opinion">Opinión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="feed-header">
+        <img src="{{rss.feed.image.href}}" alt="Logo de La Vanguardia" />
+        <h1>{{rss.feed.title}}</h1>
+        <a href="{{rss.feed.link}}" target="_blank" class="link">Anar a aquesta secció de La Vanguardia</a>
+    </section>
+
+    <section class="articles-grid">
+        {% for item in rss.entries %}
+        <div class="article">
+            <h2><a href="{{item.link}}">{{item.title}}</a></h2>
+            <p>{{item.description}}</p>
+            <p class="dades"><strong>Data de creació:</strong> {{item.published}}</p>
+            <p class="dades"><strong>Data de modificació:</strong> {{item.updated}}</p>
+            <p class="dades"><strong>Autor:</strong> {{item.author}}</p>
+            <p class="dades"><strong>Categoria:</strong> {{item.category}}</p>
             {% for media in item.media_content %}
-                <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
+            <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
             {% endfor %}
-        </p>
-    {% endfor %}
+        </div>
+        {% endfor %}
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Aplicació RSS - Tots els drets reservats</p>
+    </footer>
 </body>
+
 </html>
