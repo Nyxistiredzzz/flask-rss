@@ -1,9 +1,6 @@
-/* Estil general */
 body {
     background-color: #2a2d43;
-    /* Pastel beige */
     color: #333333;
-    /* Text en gris fosc */
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -13,7 +10,6 @@ body {
 h1,
 h2 {
     color: #6a67ce;
-    /* Pastel rosa */
     text-align: center;
     margin: 20px 0;
 }
