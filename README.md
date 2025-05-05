@@ -76,5 +76,4 @@ Per canviar entre aquests modes, edita la funció `get_rss_lavanguardia` al fitx
 
 ## Recursos addicionals
 
-- [Documentació oficial de Flask](https://flask.palletsprojects.com/)
 - [Què són els entorns virtuals?](https://realpython.com/python-virtual-environments-a-primer/)
