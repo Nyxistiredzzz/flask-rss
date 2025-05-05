@@ -40,14 +40,14 @@ pip install feedparser flask
 Per iniciar l'aplicació Flask, executa:
 
 ```powershell
-python app.py
+flask run
 ```
 
 L'aplicació estarà disponible a <http://127.0.0.1:5000>.
 
 ### 5\. Desactivar l'entorn virtual
 
-Quan hagis acabat, pots desactivar l'entorn virtual amb:
+Quan hagis acabat, pots utilitzar CTRL+C per sortir i després pots desactivar l'entorn virtual amb:
 
 ```powershell
 deactivate
